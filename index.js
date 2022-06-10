@@ -135,7 +135,7 @@ app.post('/slack/actions', async(req, res) => {
 
 
 /* Running Express server */
-const server = app.listen(80, () => {
+const server = app.listen(5000, () => {
   console.log('Express web server is running on port %d in %s mode', server.address().port, app.settings.env);
 });
 
