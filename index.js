@@ -43,6 +43,7 @@ app.use(bodyParser.json({ verify: rawBodyBuffer }));
  */
 
 app.post('/slack/events', async(req, res) => {
+  console.log(JSON.parse(req.body))
   switch (req.body.type) {
       
     case 'url_verification': {
@@ -105,7 +106,7 @@ app.post('/slack/events', async(req, res) => {
  */
 
 app.post('/slack/actions', async(req, res) => {
-  //console.log(JSON.parse(req.body.payload));
+  console.log(JSON.parse(req.body.payload));
   
   const { token, trigger_id, user, actions, type } = JSON.parse(req.body.payload);
  
