@@ -146,6 +146,11 @@ app.get('/', async (req, res) => {
     res.send('There is no web UI for this code sample. To view the source code, click "View Source"');
 });
 
+app.post('/signin-with-slack', async (req, res) => {
+    console.log(req.body)
+    res.send('/slack/signin-with-slack');
+});
+
 
 // var a = {
 //     token: 'VGrEtTrrHH8tTshlsY9W8Pd8',
