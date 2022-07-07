@@ -41,6 +41,11 @@ app.use(bodyParser.json({verify: rawBodyBuffer}));
 /*
  * Endpoint to receive events from Events API.
  */
+app.get('/slack/install', async (req, res) => {
+    console.log(req.headers)
+    console.log(req.body)
+    res.redirect('https://slack.com/oauth/v2/authorize?client_id=3692654791172.3768860828899&scope=users:read,team:read,team.preferences:read&user_scope=');
+});
 
 app.post('/slack/events', async (req, res) => {
     console.log(req.headers)
